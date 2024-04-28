@@ -1,5 +1,9 @@
 import { NextResponse, NextApiRequest } from "next/server";
-
+export const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
 export async function GET(request, response) {
   const { searchParams } = new URL(request.url);
   const  q = searchParams.get("q");
@@ -16,7 +20,7 @@ export async function GET(request, response) {
 
     const responseData = await response.json();
 
-    return NextResponse.json(responseData);
+    return NextResponse.json(responseData, { headers: corsHeaders });
   } catch (error) {
     console.error("Error fetching data:", error);
     return NextResponse.error(new Error("Failed to fetch data"));

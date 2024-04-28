@@ -8,7 +8,7 @@ export default function Home() {
     const newsAPIKey = '425b94cf19be4a12a442b6a0db7420f5';
     const fetchNews = async () => {
       try {
-        const response = await fetch(`/api/news?q=${searchQuery}&apiKey=${newsAPIKey}`);
+        const response = await fetch(`/api/top-news?apiKey=${newsAPIKey}`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
