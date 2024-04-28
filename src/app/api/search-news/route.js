@@ -6,12 +6,11 @@ export const corsHeaders = {
 };
 export async function GET(request, response) {
   const { searchParams } = new URL(request.url);
-  const  fromDate = searchParams.get("fromDate");
-  const  toDate = searchParams.get("toDate");
+  const  q = searchParams.get("q");
   const  apiKey = searchParams.get("apiKey");
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=apple&from=${fromDate}&to=${toDate}&sortBy=popularity&apiKey=${apiKey}`
+      `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}&language=en&searchIn=title`
     );
 
     if (!response.ok) {
