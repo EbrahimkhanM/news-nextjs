@@ -5,10 +5,9 @@ export async function GET(request, response) {
   const  fromDate = searchParams.get("fromDate");
   const  toDate = searchParams.get("toDate");
   const  apiKey = searchParams.get("apiKey");
-  console.log("q>>>>>", q);
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=apple&from=${fromDate}&to=${toDate}&sortBy=popularity&apiKey=${newsAPIKey}`
+      `https://newsapi.org/v2/everything?q=apple&from=${fromDate}&to=${toDate}&sortBy=popularity&apiKey=${apiKey}`
     );
 
     if (!response.ok) {

@@ -3,10 +3,9 @@ import { NextResponse, NextApiRequest } from "next/server";
 export async function GET(request, response) {
   const { searchParams } = new URL(request.url);
   const  apiKey = searchParams.get("apiKey");
-  console.log("q>>>>>", q);
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${newsAPIKey}`
+      `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
     );
 
     if (!response.ok) {
