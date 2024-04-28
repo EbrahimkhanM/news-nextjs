@@ -10,7 +10,7 @@ export async function GET(request, response) {
   const  apiKey = searchParams.get("apiKey");
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}&language=en&searchIn=title`
+      `https://newsapi.org/v2/everything?q=${q}&apiKey=${apiKey}&language=en&searchIn=title`
     );
 
     if (!response.ok) {
