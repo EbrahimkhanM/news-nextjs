@@ -13,7 +13,7 @@ export async function GET(request, response) {
   const  toDate = searchParams.get("toDate") ?? "";
   try {
     const response = await fetch(
-      `https://newsapi.org/v2/everything?q=${q ? q: "apple"}&sources=${sources}&from=${fromDate}&to=${toDate}&apiKey=${apiKey}&language=en&searchIn=title`
+      `https://newsapi.org/v2/everything?q=${q ? q: "all"}&sources=${sources}&from=${fromDate}&to=${toDate}&apiKey=${apiKey}&language=en&searchIn=title`
     );
 
     if (!response.ok) {
